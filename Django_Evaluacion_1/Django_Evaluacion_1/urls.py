@@ -21,4 +21,9 @@ from Ev_1_App import views as ev1
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ev1.renderIndex),
+    path('electronica/', ev1.renderElectro),
+    path('juguetes/', ev1.renderJuguete),
+    path('ropa/', ev1.renderRopa),
+    path('user/', ev1.renderUser),
+    path('detalles/', ev1.renderDetalles),
 ]

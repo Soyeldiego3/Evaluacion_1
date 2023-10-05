@@ -31,14 +31,24 @@
                     <div class="col">
                         <div class="d-flex justify-content-center">
                             <div class="border border-2 border-info rounded d-flex justify-content-center mb-1">
-                                <img src="{%static 'img/'%}{{FotoPerfil}}" style="width: 300px;" class="object-fit-fill img-fluid rounded d-flex" alt="Foto de Perfil">
+                                <img src="{%static 'img/productos/'%}{{foto}}" class="object-fit-fill img-fluid rounded d-flex" alt="Foto producto">
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="border border-2 border-black rounded p-1 bg-light-subtle">
-                            <div class="display-5 text-center d-flex p-2">
-                                Detalles: {{producto}}
+                            <div class="display-5 text-center d-flex p-2 border border-2 border-black rounded text-capitalize m-2">
+                                {{producto}}
+                            </div>
+                            <div class="text-wrap fs-3 m-1">
+                                {{detalle}}
+                            </div>
+                            <div class=" fs-3 m-1">
+                                Precio: {{precio}}
+                            </div>
+                            <div class="text-danger fs-3 m-1">
+                                Disponibilidad solo en Tienda!
+
                             </div>
                         </div>
                     </div>
@@ -47,7 +57,7 @@
 
             <div class="d-flex justify-content-end">
                 <div class="mt-2 me-2">
-                    <a href="/" class="btn btn-success">Volver <i class="bi bi-caret-left-fill"></i></a>
+                    <a href="/{{pagina}}" class="btn btn-success">Volver <i class="bi bi-caret-left-fill"></i></a>
                 </div>
             </div>
         </div>

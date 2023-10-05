@@ -41,9 +41,23 @@
                 {{title}}
             </div>
             <div class="row mt-3">   
-                <div class="col"><a href="/detalles/0/0">Prod1</a></div>
-                <div class="col"><a href="/detalles/1/1">Prod2</a></div>
-                <div class="col"><a href="/detalles/2/2">Prod3</a></div>
+                <div class="col"><a href="/detalles/{{title}}/prod2">
+                    <div class="container text-center">
+                        <img src="{%static 'img/productos/'%}{{prod2}}" style="width: 300px;height: 200px;" alt="">
+                    </div>
+                </a></div>
+
+                <div class="col"><a href="/detalles/{{title}}/prod1">
+                    <div class="container text-center">
+                        <img src="{%static 'img/productos/'%}{{prod1}}" style="width: 300px;height: 200px;" alt="">
+                    </div>
+                </a></div>
+
+                <div class="col"><a href="/detalles/{{title}}/prod3">
+                    <div class="container text-center">
+                        <img src="{%static 'img/productos/'%}{{prod3}}" style="width: 300px;height: 200px;" alt="">
+                    </div>
+                </a></div>
             </div>
         </div>
         <div class="d-flex justify-content-end">

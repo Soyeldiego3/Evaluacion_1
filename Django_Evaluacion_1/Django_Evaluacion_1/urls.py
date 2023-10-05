@@ -25,5 +25,5 @@ urlpatterns = [
     path('juguetes/', ev1.renderJuguete),
     path('ropa/', ev1.renderRopa),
     path('user/', ev1.renderUser),
-    path('detalles/<int:pag>/<int:prod>', ev1.renderDetalles),
+    path('detalles/<str:pag>/<str:prod>', ev1.renderDetalles),
 ]

@@ -9,34 +9,43 @@ def usuario():
     data = {'UserName':Nombre, 'FotoPerfil': Foto}
     return data
 
-def renderIndex(request):
-    data = usuario()
-    return render(request,'templatesApp\index.html',data)
-
+#render de templates
 def renderUser(request):
     data = usuario()
     return render(request, 'templatesApp\paginausuario.html', data)
 
+def renderIndex(request):
+    data = usuario()
+    return render(request,'templatesApp\index.html',data)
 
 def renderElectro(request):
-    FotosElectro = {"prod1":"tele.jpg", "prod2":"monitor.jpg", "prod3": "mouse.jpg"}
+    prodElectro = {"prod1":"Tele", "prod2":"Monitor", "prod3": "Mouse"}
+    FotosElectro = {"foto1":"tele.jpg", "foto2":"monitor.jpg", "foto3": "mouse.jpg"}
+    otros = {'title':'Electronica', 'ico':'bi bi-hdd', 'bgcolor':'bg-info', 'txtcolor':'text-black'}
     data = usuario()
-    data['title'] = 'Electronica'
+    data.update(otros)
     data.update(FotosElectro)
+    data.update(prodElectro)
     return render(request, 'templatesApp\productos.html', data)
 
 def renderJuguete(request):
-    FotosJuguete = {"prod1":"auto.jpg", "prod2":"muneca.jpg", "prod3":"avion.jpg"}
+    prodJuguete = {"prod1":"Auto", "prod2":"Muñeca", "prod3":"Avión"}
+    FotosJuguete = {"foto1":"auto.jpg", "foto2":"muneca.jpg", "foto3":"avion.jpg"}
+    otros = {'title':'Juguetes', 'ico':'bi bi-car-front-fill', 'bgcolor':'bg-warning', 'txtcolor':'text-black'}
     data = usuario()
-    data['title'] = 'Juguetes'
+    data.update(otros)
     data.update(FotosJuguete)
+    data.update(prodJuguete)
     return render(request, 'templatesApp\productos.html', data)
 
 def renderRopa(request):
-    FotosRopa = {"prod1":"polera.jpg", "prod2":"poleron.jpg", "prod3":"pantalon.jpg"}
+    prodRopa = {"prod1":"Polera", "prod2":"Poleron", "prod3":"Pantalon"}
+    FotosRopa = {"foto1":"polera.jpg", "foto2":"poleron.jpg", "foto3":"pantalon.jpg"}
+    otros = {'title':'Ropa', 'ico':'bi bi-bag-fill', 'bgcolor':'bg-danger', 'txtcolor':'text-light'}
     data = usuario()
-    data['title'] = 'Ropa'
+    data.update(otros)
     data.update(FotosRopa)
+    data.update(prodRopa)
     return render(request, 'templatesApp\productos.html', data)
 
 def renderDetalles(request,pag,prod):
@@ -49,8 +58,8 @@ def renderDetalles(request,pag,prod):
 
     #Detalles de cada Producto
     DetalleElectro = {"prod1":'108" 8K 240hz HDR++1000 3D-HD-Res', "prod2":'24" 360hz QHD 0.01ms Freesync Gsync', "prod3": "Ultra preciso. Increible Mouse. RGB Personalizable. 10gr de peso super ultra ligero"}
-    DetalleJuguete = {"prod1":"Auto", "prod2":"Muñeca", "prod3":"Avión"}
-    DetalleRopa = {"prod1":"Polera", "prod2":"Poleron", "prod3":"Pantalon"}
+    DetalleJuguete = {"prod1":"Auto de Juguete ultra veloz, reistente a huracanes. Fabricado en titanio reforzado con coraza de submarino nuclear", "prod2":"Muñeca automata. habla por la noche y se mueve. ¡No hacercar crucifijos ni agua bendita!", "prod3":"Avión volador. vuela muy alto."}
+    DetalleRopa = {"prod1":"Polera de fibra nuclear", "prod2":"Poleron reflectante de materia oscura", "prod3":"Pantalon autoajustable. funciones inteligentes. posee compatibilidad con Siri, Alexa y Google Home"}
     Detalles = [DetalleElectro,DetalleJuguete,DetalleRopa]
 
     #Precio Productos
@@ -65,7 +74,7 @@ def renderDetalles(request,pag,prod):
     FotosRopa = {"prod1":"polera.jpg", "prod2":"poleron.jpg", "prod3":"pantalon.jpg"}
     Fotos = [FotosElectro,FotosJuguete,FotosRopa]
 
-    #segun la pagina se le asigna un numero para buscar dentro de las listas
+    #segun la pagina (pag) se le asigna un numero para buscar dentro de las listas
     if pag == "Electronica":
         numpag = 0
     elif pag == "Juguetes":
@@ -74,6 +83,7 @@ def renderDetalles(request,pag,prod):
         numpag = 2
 
     data = usuario()
+    data['title'] = 'Detalles'
     data["pagina"] = pag.lower()
     data["producto"] = productos[numpag][prod]
     data["detalle"] = Detalles[numpag][prod]

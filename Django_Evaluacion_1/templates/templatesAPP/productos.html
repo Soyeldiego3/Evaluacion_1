@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
+<body class="bg-dark-subtle">
     <div class="container-fluid bg-dark-subtle align-content-center pb-5">
         <div class="container-fluid body-secondary">
             <div class="row p-3 alert alert-info text-center">
@@ -16,8 +16,14 @@
                     <!--Espaciado para columnas-->
                 </div>
                 <div class="col p-3 display-1"> <!-- Titulo Principal -->
-                    <img src="{%static 'img/djangoIco.png'%}" style="width: 100px;" alt="Dajango Icon">
-                    DjangoShop
+                    <a href="/" class="btn">
+                        <div>
+                            <div class="display-1 text-dark">
+                                <img src="{%static 'img/djangoIco.png'%}" style="width: 100px;" alt="Dajango Icon">
+                                DjangoShop
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col"> <!-- Card de Usuario -->
                     <div class="d-flex justify-content-end">
@@ -36,33 +42,78 @@
                 </div>
             </div> 
         </div>
+
         <div class="container-fluid bg-secondary border border-3 border-black rounded-top-3 p-3">
-            <div class="text-center display-4 bg-info-subtle p-2 rounded">
+            <!-- Titulo de Pagina de Productos -->
+            <div class="text-center display-4 p-2 rounded {{bgcolor}} {{txtcolor}}">
+                <i class="{{ico}}"></i>
                 {{title}}
             </div>
+
+            <!-- Row de productos -->
             <div class="row mt-3">   
-                <div class="col"><a href="/detalles/{{title}}/prod2">
-                    <div class="container text-center">
-                        <img src="{%static 'img/productos/'%}{{prod2}}" style="width: 300px;height: 200px;" alt="">
-                    </div>
-                </a></div>
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <a href="/detalles/{{title}}/prod1" class="btn p-1">
+                            <div class="rounded-top-3 rounded-bottom-3 p-1">
+                                <div class="bg-dark rounded-top-3 rounded-bottom-3 p-2 border border-1 border-black ">
+                                    <div class="border border-2 border-info-subtle d-flex justify-content-center mb-2 rounded"style="height: 350px;">
+                                        <img src="{%static 'img/productos/'%}{{foto1}}" class="object-fit-fill img-fluid d-flex" alt="Foto de Perfil">
+                                    </div>
 
-                <div class="col"><a href="/detalles/{{title}}/prod1">
-                    <div class="container text-center">
-                        <img src="{%static 'img/productos/'%}{{prod1}}" style="width: 300px;height: 200px;" alt="">
+                                    <div class="fs-6 text-center bg-secondary p-2 border border-2 border-black rounded text-light"></i>{{prod1}}</div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a></div>
+                </div>
 
-                <div class="col"><a href="/detalles/{{title}}/prod3">
-                    <div class="container text-center">
-                        <img src="{%static 'img/productos/'%}{{prod3}}" style="width: 300px;height: 200px;" alt="">
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <a href="/detalles/{{title}}/prod2" class="btn p-1">
+                            <div class="rounded-top-3 rounded-bottom-3 p-1">
+                                <div class="bg-dark rounded-top-3 rounded-bottom-3 p-2 border border-1 border-black ">
+                                    <div class="border border-2 border-info-subtle d-flex justify-content-center mb-2 rounded"style="height: 350px;">
+                                        <img src="{%static 'img/productos/'%}{{foto2}}" class="object-fit-fill img-fluid d-flex" alt="Foto de Perfil">
+                                    </div>
+
+                                    <div class="fs-6 text-center bg-secondary p-2 border border-2 border-black rounded text-light">{{prod2}}</div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a></div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <a href="/detalles/{{title}}/prod3" class="btn p-1">
+                            <div class="rounded-top-3 rounded-bottom-3 p-1">
+                                <div class="bg-dark rounded-top-3 rounded-bottom-3 p-2 border border-1 border-black ">
+                                    <div class="border border-2 border-info-subtle d-flex justify-content-center mb-2 rounded"style="height: 350px;">
+                                        <img src="{%static 'img/productos/'%}{{foto3}}" class="object-fit-fill img-fluid d-flex" alt="Foto de Perfil">
+                                    </div>
+
+                                    <div class="fs-6 text-center bg-secondary p-2 border border-2 border-black rounded text-light">{{prod3}}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!--<div class="col"><a href="/detalles/{{title}}/prod3">
+                    <div class="container text-center">
+                        <img src="{%static 'img/productos/'%}{{foto3}}" style="width: 300px;" class="border border-2 border-black rounded " alt="">
+                        <div class="fs-3">
+                            {{prod3}}
+                        </div>
+                    </div>
+                </a></div> !-->
             </div>
-        </div>
-        <div class="d-flex justify-content-end">
-            <div class="mt-2 me-2">
-                <a href="/" class="btn btn-success">Volver al Menu <i class="bi bi-caret-left-fill"></i></a>
+            <!-- Boton para volver -->
+            <div class="d-flex justify-content-end">
+                <div class="mt-2 me-2">
+                    <a href="/" class="btn btn-success">Volver al Menu <i class="bi bi-caret-left-fill"></i></a>
+                </div>
             </div>
         </div>
     </div>

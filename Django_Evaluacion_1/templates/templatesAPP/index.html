@@ -16,9 +16,15 @@
                 <div class="col p-3">
                     <!--Espaciado para columnas-->
                 </div>
-                <div class="col p-3 display-1"> <!-- Titulo Principal -->
-                    <img src="{%static 'img/djangoIco.png'%}" style="width: 100px;" alt="Dajango Icon">
-                    DjangoShop
+                <div class="col p-3"> <!-- Titulo Principal -->
+                    <a href="/" class="btn">
+                        <div>
+                            <div class="display-1 text-dark">
+                                <img src="{%static 'img/djangoIco.png'%}" style="width: 100px;" alt="Dajango Icon">
+                                DjangoShop
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col"> <!-- Card de Usuario -->
                     <div class="d-flex justify-content-end">
@@ -40,10 +46,25 @@
 
         <div class="container-fluid bg-secondary border border-3 border-black rounded-top-3 p-3">
             <div class="row mt-3">   
-                <div class="col"><img src="{%static 'img/electronica.png'%}" class="w-100 rounded-top-3 mb-2" alt="Electronica"><a href="/electronica" class="btn btn-info w-100 p-3"><i class="bi bi-hdd"></i> Electronica</a></div>
-                <div class="col"><img src="{%static 'img/juguetes.jpg'%}" class="w-100 rounded-top-3 mb-2" alt="Juguetes"><a href="/juguetes" class="btn btn-warning w-100 p-3"><i class="bi bi-car-front-fill"></i> Juguetes</a></div>
-                <div class="col"><img src="{%static 'img/ropa.jpg'%}" class="w-100 rounded-top-3 mb-2" alt="Ropa"><a href="/ropa" class="btn btn-danger w-100 p-3"><i class="bi bi-bag-fill"></i> Ropa</a></div>
-            </div>
+                <div class="col">
+                    <div>
+                        <a href="/electronica"><img src="{%static 'img/electronica.png'%}" class="w-100 rounded-top-3 mb-2" alt="Electronica"></a>
+                        <a href="/electronica" class="btn btn-info w-100 p-3"><i class="bi bi-hdd"></i> Electronica</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <a href="/juguetes"><img src="{%static 'img/juguetes.jpg'%}" class="w-100 rounded-top-3 mb-2" alt="Juguetes"></a>
+                        <a href="/juguetes" class="btn btn-warning w-100 p-3"><i class="bi bi-car-front-fill"></i> Juguetes</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <a href="/ropa"><img src="{%static 'img/ropa.jpg'%}" class="w-100 rounded-top-3 mb-2" alt="Ropa"></a>
+                        <a href="/ropa" class="btn btn-danger w-100 p-3 "><i class="bi bi-bag-fill"></i> Ropa</a>
+                    </div>
+                </div>
+            </div> 
         </div>
     </div>
 </body>

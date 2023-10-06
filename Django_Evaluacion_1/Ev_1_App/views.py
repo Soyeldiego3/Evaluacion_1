@@ -23,6 +23,7 @@ def renderElectro(request):
     prodElectro = {"prod1":"Tele", "prod2":"Monitor", "prod3": "Mouse"}
     FotosElectro = {"foto1":"tele.jpg", "foto2":"monitor.jpg", "foto3": "mouse.jpg"}
     otros = {'title':'Electronica', 'ico':'bi bi-hdd', 'bgcolor':'bg-info', 'txtcolor':'text-black'}
+    
     data = usuario()
     data.update(otros)
     data.update(FotosElectro)
@@ -33,6 +34,7 @@ def renderJuguete(request):
     prodJuguete = {"prod1":"Auto", "prod2":"Muñeca", "prod3":"Avión"}
     FotosJuguete = {"foto1":"auto.jpg", "foto2":"muneca.jpg", "foto3":"avion.jpg"}
     otros = {'title':'Juguetes', 'ico':'bi bi-car-front-fill', 'bgcolor':'bg-warning', 'txtcolor':'text-black'}
+    
     data = usuario()
     data.update(otros)
     data.update(FotosJuguete)
@@ -43,6 +45,7 @@ def renderRopa(request):
     prodRopa = {"prod1":"Polera", "prod2":"Poleron", "prod3":"Pantalon"}
     FotosRopa = {"foto1":"polera.jpg", "foto2":"poleron.jpg", "foto3":"pantalon.jpg"}
     otros = {'title':'Ropa', 'ico':'bi bi-bag-fill', 'bgcolor':'bg-danger', 'txtcolor':'text-light'}
+    
     data = usuario()
     data.update(otros)
     data.update(FotosRopa)
@@ -50,6 +53,8 @@ def renderRopa(request):
     return render(request, 'templatesApp\productos.html', data)
 
 def renderDetalles(request,pag,prod):
+    #pag viene desde la url y es el nombre de la pagina Ej: "Electronica"
+    #prod viene desde la url y es el nombre de la posicion del producto desde el 1 al 3 Ej: "prod1"
 
     #Nombre de los productos Productos en diccionairos que son agrupados dentro de una lista para su uso
     prodElectro = {"prod1":"Tele", "prod2":"Monitor", "prod3": "Mouse"}

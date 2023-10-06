@@ -44,16 +44,24 @@
                                 </div>
                             </div>
                         </div>
-                        <!--<div class="d-flex justify-content-center">
-                            <div class="border border-2 border-info rounded d-flex justify-content-center mb-1">
-                                <img src="{%static 'img/'%}{{FotoPerfil}}" style="width: 300px;" class="object-fit-fill img-fluid rounded d-flex" alt="Foto de Perfil">
-                            </div>
-                        </div>-->
                     </div>
                     <div class="col">
                         <div class="border border-2 border-black rounded p-1 bg-light-subtle">
-                            <div class="display-5 text-center d-flex p-2">
-                                Usuario: {{UserName}}
+                            <div class="display-5 d-flex p-2 text-wrap">
+                                <div>
+                                    <div class="d-flex mb-3">
+                                        <div class="me-2 text-primary">
+                                            Usuario:
+                                        </div>
+                                        {{UserName}}
+                                    </div>
+                                    <div class="d-flex mb-3">
+                                        <div class="me-2 text-primary">
+                                            Detalles:
+                                        </div>
+                                        {{Desc}}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

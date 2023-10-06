@@ -6,7 +6,8 @@ from django.shortcuts import render
 def usuario():
     Nombre = "Diego"
     Foto = "fotoperfil.gif"
-    data = {'UserName':Nombre, 'FotoPerfil': Foto}
+    Desc = "Hola, Evaluacion 1 Django!"
+    data = {'UserName':Nombre, 'FotoPerfil': Foto, 'Desc': Desc}
     return data
 
 #render de templates

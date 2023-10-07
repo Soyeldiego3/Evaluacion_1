@@ -7,7 +7,8 @@ def usuario():
     Nombre = "Diego"
     Foto = "fotoperfil.gif"
     Desc = "Hola, Evaluacion 1 Django!"
-    data = {'UserName':Nombre, 'FotoPerfil': Foto, 'Desc': Desc}
+    Correo = "Diego@correo.com"
+    data = {'UserName':Nombre, 'FotoPerfil': Foto, 'Desc': Desc, 'Correo':Correo}
     return data
 
 #render de templates
